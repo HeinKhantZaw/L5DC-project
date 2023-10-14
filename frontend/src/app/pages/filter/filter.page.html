@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Filter By Doctor</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <div class="ion-padding-horizontal">
+            <h6 class="section-title text-grey">Gender</h6>
+        </div>
+        <ion-radio-group (ionChange)="getRadioValue($event)">
+            <ion-item>
+                <ion-label>Male</ion-label>
+                <ion-radio slot="start" value="male"></ion-radio>
+            </ion-item>
+            <ion-item>
+                <ion-label>Female</ion-label>
+                <ion-radio slot="start" value="female"></ion-radio>
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
+
+    <div class="section ion-padding-horizontal">
+        <h6 class="section-title text-grey">Consultation Fee Range: MMK {{lowerPrice && lowerPrice + " Kyats"}}
+            - {{higherPrice && higherPrice + " Kyats"}}</h6>
+        <ion-range (ionChange)="PriceRangeChanged($event, $event)" color="dark" dual-knobs id="dual-range" max="50000" min="5000"
+                   step="1000">
+            <ion-icon name="cash" size="small" slot="start"></ion-icon>
+            <ion-icon name="cash" slot="end"></ion-icon>
+        </ion-range>
+    </div>
+
+    <div class="ion-padding ion-text-center">
+        <ion-button (click)="Apply()" color="tertiary" shape="round">
+            <ion-text>Apply</ion-text>
+        </ion-button>
+    </div>
+</ion-content>

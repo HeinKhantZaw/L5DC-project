@@ -1,0 +1,7 @@
+{
+  "name": "LifeCare",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
